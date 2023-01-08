@@ -22,3 +22,7 @@ Start
 - Light/Dark theme mode switch
 - Sidebar Nav
 - Edit invoice overlay
+
+# Credit
+
+- Provided by [Frontend Mentor](https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl)

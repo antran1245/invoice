@@ -14,6 +14,10 @@ nav {
   background-color: #373B53;
   height: 100vh;
   width: fit-content;
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 3;
 }
 nav, .logo {
   border-top-right-radius: 20px;
@@ -77,10 +81,18 @@ nav, .logo {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
   .avatarMode {
     .avatar {
       border: none;
       border-left: 1px solid #494E6E;
+    }
+    img {
+      width: 32px;
+      height: 32px;
     }
   }
 }

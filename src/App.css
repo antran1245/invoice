@@ -1,14 +1,37 @@
 /* 
 * Global styles
 */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 * {
   margin: 0;
   padding: 0;
+  font-family: 'League Spartan', normal;
 }
+
 [data-color-mode="light"] {
   --color-bg: #DFE3FA;
+  --color-common-text: #0C0E16;
+  --color-subtitle: #888EB0;
+}
+[data-color-mode="dark"] {
+  --color-bg: #141625;
+  --color-common-text: #FFFFFF;
+  --color-subtitle: #DFE3FA;
 }
 
 .container-fluid {
   background-color: var(--color-bg);
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
+.container {
+  position: relative;
+  margin-top: 75px;
+}
+
+@media only screen and (max-width: 810px) and (orientation: portrait) {
+  .container-fluid {
+    flex-direction: column;
+  }
 }

@@ -12,11 +12,15 @@
   --color-bg: #DFE3FA;
   --color-common-text: #0C0E16;
   --color-subtitle: #888EB0;
+  --color-box: #FFFFFF;
+  --color-checkbox: #DFE3FA;
 }
 [data-color-mode="dark"] {
   --color-bg: #141625;
   --color-common-text: #FFFFFF;
   --color-subtitle: #DFE3FA;
+  --color-box: #252945;
+  --color-checkbox: #1E2139;
 }
 
 .container-fluid {

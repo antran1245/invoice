@@ -12,7 +12,7 @@ export default function InvoicesListing() {
           <p className="subtitle">There are 7 total invoices</p>
         </div>
         <div className="options">
-          <Dropdown id="filter-button" autoClose={"outside"}>
+          <Dropdown id="filter-button" autoClose={false}>
             <Dropdown.Toggle>
               Filter by status <FontAwesomeIcon icon={faAngleDown} />
             </Dropdown.Toggle>

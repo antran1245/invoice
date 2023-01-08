@@ -1,13 +1,21 @@
-nav, .avatarMode {
+nav, .avatarMode, .logo {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
+nav, .avatarMode {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Sidebar
+* Does not change by theme
+*/
 nav {
   background-color: #373B53;
   height: 100vh;
   width: fit-content;
+}
+nav, .logo {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -16,11 +24,7 @@ nav {
   height: 103px;
   width: 103px;
   background-color: (#7C5DFA);
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  display: flex;
   justify-content: center;
-  align-items: center;
   svg {
     position: relative;
     z-index: 1;
@@ -36,6 +40,10 @@ nav {
     border-bottom-right-radius: 20px;
   }
 }
+
+/*
+* Sidebar bottom avatar icons and theme mode
+*/
 .avatarMode {
   span {
     padding: 24px 32px;
@@ -56,5 +64,23 @@ nav {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 810px) and (orientation: portrait) {
+  nav, .avatarMode {
+    flex-direction: row;
+  }
+  nav {
+    width: 100vw;
+    height: fit-content;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .avatarMode {
+    .avatar {
+      border: none;
+      border-left: 1px solid #494E6E;
+    }
   }
 }

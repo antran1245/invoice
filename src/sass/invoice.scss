@@ -1,0 +1,78 @@
+.invoice {
+  background-color: var(--color-box);
+  padding: 16px 24px 16px 32px;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+  cursor: pointer;
+  & > div {
+    padding: 0;
+  }
+  p {
+    margin: 0;
+  }
+  .id, .duedate, .name {
+    line-height: 15px;
+    letter-spacing: -0.25px;
+  }
+  .id {
+    font-weight: 700;
+    color: var(--color-common-text);
+    span {
+      color: #7E88C3;
+    }
+  }
+  .duedate, .name {
+    font-weight: 500;
+    color: var(--color-subtitle);
+    width: fit-content;
+  }
+  .price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: right;
+    letter-spacing: -0.8px;
+    color: var(--color-common-text);
+  }
+  .status, .status > div {
+    display: flex;
+    align-items: center;
+  }
+  .status {
+      width: 104px;
+      height: 40px;
+      margin-left: 40px;
+      font-weight: 700;
+      line-height: 15px;
+      letter-spacing: -0.25px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        margin-right: 8px;
+      }
+      &.paid {
+        background-color: rgba($color: #33D69F, $alpha: 0.06);
+        color: #33D69F;
+      }
+      &.pending {
+        background-color: rgba($color: #FF8F00, $alpha: 0.06);
+        color: #FF8F00;
+      }
+      &.draft {
+        background-color: var(--color-status-draft);
+        color: var(--color-status-draft-text);
+      }
+  }
+  .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .fa-angle-right{
+      color: #7C5DFA;
+    }
+  }
+}

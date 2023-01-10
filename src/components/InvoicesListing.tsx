@@ -1,12 +1,16 @@
+import { useState } from "react";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faCirclePlus, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import Invoice from "./Invoice";
 import empty from '../assets/illustration-empty.svg'
+import data from '../data.json'
 import "../sass/invoiceslisting.scss"
 
 export default function InvoicesListing() {
+  const [angle, setAngle] = useState<boolean>(true)
   return (
-    <div id="listing">
+    <div id="invoicesListing">
       <Row>
         <header id="header">
           <div>
@@ -15,8 +19,8 @@ export default function InvoicesListing() {
           </div>
           <div className="options">
             <Dropdown id="filter-button" autoClose={false}>
-              <Dropdown.Toggle>
-                Filter by status <FontAwesomeIcon icon={faAngleDown} />
+              <Dropdown.Toggle onClickCapture={() => setAngle(!angle)}>
+                Filter by status <FontAwesomeIcon icon={angle ? faAngleDown : faAngleUp} />
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <div><label><input type={"checkbox"} value="Draft" /> Draft</label></div>
@@ -28,12 +32,20 @@ export default function InvoicesListing() {
           </div>
         </header>
       </Row>
-      <Row id="invoices">
-        <Col xs={3} className="empty">
-          <img src={empty} alt="no invoice" />
-          <p>There is nothing here</p>
-          <p className="subtitle"> Create an invoice by clicking the <b>New Invoice</b> button and get started</p>
-        </Col>
+      <Row id="invoicesContainer">
+        {
+          data.length > 0 ?
+            <Col className="listing">
+              {data.map((item, index) => {
+                return <Invoice key={index} {...item} />
+              })}
+            </Col> :
+            <Col xs={3} className="empty">
+              <img src={empty} alt="no invoice" />
+              <p>There is nothing here</p>
+              <p className="subtitle"> Create an invoice by clicking the <b>New Invoice</b> button and get started</p>
+            </Col>
+        }
       </Row>
     </div>
   )

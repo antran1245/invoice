@@ -40,6 +40,10 @@
   margin-top: 75px;
 }
 
+p {
+  margin: 0;
+}
+
 @media only screen and (max-width: 810px) and (orientation: portrait) {
   .container-fluid {
     flex-direction: column;

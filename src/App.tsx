@@ -4,6 +4,7 @@ import Main from './components/Main';
 import Sidebar from './components/Sidebar';
 import InvoiceContext from './context/InvoiceContext';
 import './App.css';
+import './sass/App.scss'
 
 function App() {
   const [theme, setTheme] = useState<boolean>(false)

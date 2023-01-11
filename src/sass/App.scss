@@ -1,0 +1,37 @@
+/**
+* Global styles
+*/
+
+// Styling of invoice status
+.status, .status > div {
+    display: flex;
+    align-items: center;
+  }
+.status {
+    width: 104px;
+    height: 40px;
+    margin-left: 40px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      margin-right: 8px;
+      font-size: 22px;
+    }
+    &.paid {
+      background-color: rgba($color: #33D69F, $alpha: 0.06);
+      color: #33D69F;
+    }
+    &.pending {
+      background-color: rgba($color: #FF8F00, $alpha: 0.06);
+      color: #FF8F00;
+    }
+    &.draft {
+      background-color: var(--color-status-draft);
+      color: var(--color-status-draft-text);
+    }
+}

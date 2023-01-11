@@ -9,9 +9,9 @@
 }
 
 [data-color-mode="light"] {
-  --color-bg: #DFE3FA;
+  --color-bg: #F2F2F2;
   --color-common-text: #0C0E16;
-  --color-subtitle: #888EB0;
+  --color-subtitle: #858BB2;
   --color-box: #FFFFFF;
   --color-checkbox: #DFE3FA;
   --color-menu-shadow: #48549f40;
@@ -41,7 +41,7 @@
 }
 
 p {
-  margin: 0;
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: 810px) and (orientation: portrait) {

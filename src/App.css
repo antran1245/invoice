@@ -19,8 +19,9 @@
   --color-status-draft-text: #373B53;
   --color-detail-box: #FFFFFF;
   --color-button-edit: #F9FAFE;
-  --color-button-edit-text: #7E88C3;
   --color-button-edit-hover: #DFE3FA;
+  --color-detail-text: #7E88C3;
+  --color-amount-box: #373B53;
 }
 [data-color-mode="dark"] {
   --color-bg: #141625;
@@ -33,8 +34,9 @@
   --color-status-draft-text: #DFE3FA;
   --color-detail-box: #1E2139;
   --color-button-edit: #252945;
-  --color-button-edit-text: #DFE3FA;
   --color-button-edit-hover: #FFFFFF;
+  --color-detail-text: #DFE3FA;
+  --color-amount-box: #0C0E16;
 }
 
 .container-fluid {

@@ -1,0 +1,71 @@
+#detail {
+
+  /* Back button */
+  .back {
+    svg {
+      color: #7C5DFA;
+      margin-right: 24px;
+    }
+    p {
+      font-weight: 700;
+      line-height: 15px;
+      letter-spacing: -0.25px;
+      color: var(--color-common-text);
+      cursor: pointer;
+      &:hover {
+        color: #7E88C3;
+      }
+    }
+  }
+
+  /* Status box under the go back option */
+  .statusContainer {
+    justify-content: space-between;
+    background-color: var(--color-detail-box);
+    padding: 20px 32px;
+    margin-top: 32px;
+    border-radius: 8px;
+
+    &, & > div {
+      display: flex;
+      align-items: center;
+    }
+    & > div > p {
+      color: var(--color-subtitle);
+    }
+    .status {
+      margin-left: 16px;
+    }
+    .buttonGroup {
+      button {
+        border-radius: 24px;
+        padding: 17px 24px;
+        border: none;
+      }
+      .delete, .markAsPaid {
+        margin-left: 8px;
+        color: #FFFFFF;
+      }
+      .edit {
+        background-color: var(--color-button-edit);
+        color: var(--color-button-edit-text);
+        &:hover {
+          color: #7E88C3;
+          background-color: var(--color-button-edit-hover);
+        }
+      }
+      .delete {
+        background-color: #EC5757;
+        &:hover {
+          background-color: #FF9797;
+        }
+      }
+      .markAsPaid {
+        background-color: #7C5DFA;
+        &:hover {
+          background-color: #9277FF;
+        }
+      }
+    }
+  }
+}

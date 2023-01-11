@@ -4,8 +4,8 @@
 
 // Styling of invoice status
 .status, .status > div {
-    display: flex;
-    align-items: center;
+    display: flex ;
+    align-items: center !important;
   }
 .status {
     width: 104px;

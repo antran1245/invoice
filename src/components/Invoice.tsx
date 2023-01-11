@@ -1,12 +1,15 @@
+import { useContext } from "react";
 import { Col, Row } from "react-bootstrap";
+import { InvoiceInterface } from "../interfaces/InvoiceInterface";
+import { Context } from "../context/InvoiceContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEuroSign, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { InvoiceInterface } from "../interfaces/InvoiceInterface";
 import '../sass/invoice.scss'
 
 export default function Invoice(props: InvoiceInterface) {
+  const context = useContext(Context)
   return (
-    <Row className="invoice">
+    <Row className="invoice" onClick={() => context?.setInvoice(props)}>
       <Col md={2}>
         <p className="id">
           <span>#</span>{props.id}

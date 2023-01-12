@@ -7,9 +7,9 @@ import InvoiceDetail from '../components/InvoiceDetail';
 export default function Main() {
   const context = useContext(Context)
   return (
-    <Container>
+    <Container className='px-4 px-md-0'>
       <Row>
-        <Col xs={12} lg={{ offset: 1, span: 8 }}>
+        <Col xs={12} md={{ offset: 0, span: 12 }} lg={{ offset: 1, span: 10 }} xl={9}>
           {context?.invoice ?
             <InvoiceDetail /> :
             <InvoicesListing />

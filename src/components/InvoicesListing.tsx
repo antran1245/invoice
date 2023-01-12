@@ -41,12 +41,13 @@ export default function InvoicesListing() {
         <header id="header">
           <div>
             <h1 className="title">Invoices</h1>
-            <p className="subtitle">There are 7 total invoices</p>
+            <p className="subtitle d-none d-md-block">There are 7 total invoices</p>
+            <p className="subtitle d-block d-md-none">7 invoices</p>
           </div>
           <div className="options">
             <Dropdown id="filter-button" autoClose={false}>
               <Dropdown.Toggle onClickCapture={() => setAngle(!angle)}>
-                Filter by status <FontAwesomeIcon icon={angle ? faAngleDown : faAngleUp} />
+                Filter <span className="d-none d-md-block">&nbsp;by status</span> <FontAwesomeIcon icon={angle ? faAngleDown : faAngleUp} />
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <div><label><input type={"checkbox"} value="draft" onChange={(e) => filterStatus(e)} checked={filter.draft} /> Draft</label></div>
@@ -54,7 +55,7 @@ export default function InvoicesListing() {
                 <div><label><input type={"checkbox"} value="paid" onChange={(e) => filterStatus(e)} checked={filter.paid} /> Paid</label></div>
               </Dropdown.Menu>
             </Dropdown>
-            <button className="new"><FontAwesomeIcon icon={faCirclePlus} /> New Invoice</button>
+            <button className="new"><FontAwesomeIcon icon={faCirclePlus} /> New<span className="d-none d-md-block">&nbsp;Invoice</span></button>
           </div>
         </header>
       </Row>

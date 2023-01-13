@@ -5,6 +5,7 @@
   border-radius: 8px;
   margin-bottom: 16px;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
   & > div {
     padding: 0;
@@ -29,7 +30,6 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
-    text-align: right;
     letter-spacing: -0.8px;
     color: var(--color-common-text);
   }

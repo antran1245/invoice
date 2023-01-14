@@ -13,8 +13,12 @@
   --color-common-text: #0C0E16;
   --color-subtitle: #858BB2;
   --color-box: #FFFFFF;
+
+  /* dropdown menu */
   --color-checkbox: #DFE3FA;
   --color-menu-shadow: #48549f40;
+  
+  /* mainly status styles */
   --color-status-draft: #373B530F;
   --color-status-draft-text: #373B53;
   --color-detail-box: #FFFFFF;
@@ -22,14 +26,21 @@
   --color-button-edit-hover: #DFE3FA;
   --color-detail-text: #7E88C3;
   --color-amount-box: #373B53;
+
+  /* overlay */
+  --color-overlay-form: #FFFFFF;
 }
 [data-color-mode="dark"] {
   --color-bg: #141625;
   --color-common-text: #FFFFFF;
   --color-subtitle: #DFE3FA;
   --color-box: #252945;
+
+  /* dropdown menu */
   --color-checkbox: #1E2139;
   --color-menu-shadow: #00000040;
+  
+  /* mainly status styles */
   --color-status-draft: #DFE3FA0F;
   --color-status-draft-text: #DFE3FA;
   --color-detail-box: #1E2139;
@@ -37,6 +48,9 @@
   --color-button-edit-hover: #FFFFFF;
   --color-detail-text: #DFE3FA;
   --color-amount-box: #0C0E16;
+
+  /* overlay */
+  --color-overlay-form: #141625;
 }
 
 .container-fluid {

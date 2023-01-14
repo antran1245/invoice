@@ -1,0 +1,22 @@
+#overlay {
+  position: absolute;
+  background-color: #00000080;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 2;
+}
+#formContainer {
+  position: absolute;
+  background-color: var(--color-overlay-form);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 50%;
+  padding-left: 104px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

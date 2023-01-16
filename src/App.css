@@ -29,7 +29,14 @@
 
   /* overlay */
   --color-overlay-form: #FFFFFF;
+  --color-form-input: #FFFFFF;
+  --color-form-input-border: #DFE3FA;
+  --color-form-dropdown: #FFFFFF;
+  --color-form-dropdown-divider: #DFE3FA;
+  --color-form-dropdown-shadow: #48549F40;
+;
 }
+
 [data-color-mode="dark"] {
   --color-bg: #141625;
   --color-common-text: #FFFFFF;
@@ -51,6 +58,12 @@
 
   /* overlay */
   --color-overlay-form: #141625;
+  --color-form-input: #1E2139;
+  --color-form-input-border: #252945;
+  --color-form-dropdown: #252945;
+  --color-form-dropdown-divider: #1E2139;
+  --color-form-dropdown-shadow: #00000040;
+
 }
 
 .container-fluid {

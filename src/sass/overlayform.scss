@@ -15,8 +15,86 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  width: 50%;
-  padding-left: 104px;
+  width: 719px;
+  padding: 56px 56px 32px 159px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  overflow-y: scroll;
+  p {
+    color: #7C5DFA;
+  }
+  p, .form-label, .form-control, .dropdown-toggle {
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+  }
+  .row {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .form-label {
+    color: var(--color-detail-text);
+    margin-bottom: 10px;
+  }
+  .form-control {
+    padding: 17px 0 16px 20px;
+  }
+  .form-control, .dropdown-toggle {
+    background-color: var(--color-form-input);
+    border: 1px solid var(--color-form-input-border);
+    color: var(--color-common-text);
+    border-radius: 4px;
+  }
+
+  // Calendar / Invoice Date
+  .calendar {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-form-input);
+    border: 1px solid var(--color-form-input-border);
+    border-radius: 4px;
+    position: relative;
+    input {
+      position: relative;
+      background-color: transparent;
+      z-index: 2;
+    }
+    svg {
+      color: #7E88C3;
+      position: absolute;
+      right: 16px;
+      z-index: 1;
+    }
+  }
+
+  // Dropdown menu
+  #payment-terms {
+    .dropdown-toggle::after {
+      display: none;
+    }
+    .dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px 18px 20px;
+    }
+    .dropdown-divider {
+      border-top: 2px solid var(--color-form-dropdown-divider);
+    }
+    .dropdown-menu {
+      background-color: var(--color-form-dropdown);
+      color: var(--color-common-text);
+      box-shadow: 0px 10px 20px var(--color-form-dropdown-shadow);
+      div {
+        padding: 15px 0 16px 24px;
+        cursor: pointer;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: -0.25px;
+      }
+      div:hover {
+        color: #7C5DFA;
+      }
+    }
+  }
 }

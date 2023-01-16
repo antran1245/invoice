@@ -1,4 +1,7 @@
-import { Col, Dropdown, DropdownButton, Form, Row } from "react-bootstrap";
+import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Col, Dropdown, Form, Row } from "react-bootstrap";
 
 export default function InvoiceForm() {
   return (
@@ -22,7 +25,7 @@ export default function InvoiceForm() {
         <Col>
           <Form.Group>
             <Form.Label>Post Code</Form.Label>
-            <Form.Control type="number" placeholder="00000" />
+            <Form.Control type="text" placeholder="Post Code" />
           </Form.Group>
         </Col>
         <Col>
@@ -67,7 +70,7 @@ export default function InvoiceForm() {
         <Col>
           <Form.Group>
             <Form.Label>Post Code</Form.Label>
-            <Form.Control type="number" placeholder="00000" />
+            <Form.Control type="text" placeholder="Post Code" />
           </Form.Group>
         </Col>
         <Col>
@@ -81,17 +84,29 @@ export default function InvoiceForm() {
         <Col>
           <Form.Group>
             <Form.Label>Invoice Date</Form.Label>
-            <Form.Control type="date" placeholder="City" />
+            <div className="calendar">
+              <Form.Control type="date" placeholder="City" />
+              <FontAwesomeIcon icon={faCalendar} />
+            </div>
           </Form.Group>
         </Col>
         <Col>
           <Form.Group>
             <Form.Label>Payment Terms</Form.Label>
-            <DropdownButton title={"Next 30 Days"}>
-              <Dropdown.Item>Next 30 Days</Dropdown.Item>
-              <Dropdown.Item>Next 60 Days</Dropdown.Item>
-              <Dropdown.Item>Next 90 Days</Dropdown.Item>
-            </DropdownButton>
+            <Dropdown id="payment-terms" className="h-100">
+              <Dropdown.Toggle className="w-100">
+                Net 30 Days <FontAwesomeIcon icon={faAngleDown} />
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="w-100">
+                <div>Net 1 Day</div>
+                <Dropdown.Divider />
+                <div>Net 7 Day</div>
+                <Dropdown.Divider />
+                <div>Net 14 Day</div>
+                <Dropdown.Divider />
+                <div>Net 30 Day</div>
+              </Dropdown.Menu>
+            </Dropdown>
           </Form.Group>
         </Col>
       </Row>

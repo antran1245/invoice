@@ -119,11 +119,25 @@ export default function InvoiceForm() {
         </Col>
       </Row>
       <h2>Item List</h2>
-      <Row>
+      <Row className="heading">
         <Col>Item Name</Col>
         <Col>Qty.</Col>
         <Col>Price</Col>
         <Col>Total</Col>
+      </Row>
+      <Row>
+        <Col>
+          <button className="w-100 add-button" >+Add New Item</button>
+        </Col>
+      </Row>
+      <Row className="justify-content-between">
+        <Col md={2}>
+          <button className="discard">Discard</button>
+        </Col>
+        <Col md={8} className="d-flex justify-content-end">
+          <button className="draft me-2">Save as Draft</button>
+          <button className="send">Save & Send</button>
+        </Col>
       </Row>
     </Form>
   )

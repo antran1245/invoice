@@ -10,16 +10,18 @@
 }
 #formContainer {
   position: absolute;
-  background-color: var(--color-overlay-form);
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 2;
   width: 719px;
-  padding: 56px 56px 32px 159px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow-y: scroll;
+  & > form > div {
+    padding: 56px 56px 32px 159px;
+    background-color: var(--color-overlay-form);
+  }
   p {
     color: #7C5DFA;
   }
@@ -135,5 +137,20 @@
   .send {
     background-color: #7C5DFA;
     color: #FFFFFF;
+  }
+}
+
+@media only screen and (max-width: 810px) and (orientation: portrait) {
+  #formContainer {
+    & > div {
+      padding-left: 56px;
+    }
+  }
+  #actionContainer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
   }
 }

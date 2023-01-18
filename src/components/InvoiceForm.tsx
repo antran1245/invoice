@@ -17,19 +17,19 @@ export default function InvoiceForm() {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={6} md={4}>
             <Form.Group>
               <Form.Label>City</Form.Label>
               <Form.Control type="text" placeholder="City" />
             </Form.Group>
           </Col>
-          <Col>
+          <Col xs={6} md={4}>
             <Form.Group>
               <Form.Label>Post Code</Form.Label>
               <Form.Control type="text" placeholder="Post Code" />
             </Form.Group>
           </Col>
-          <Col>
+          <Col md={4}>
             <Form.Group>
               <Form.Label>Country</Form.Label>
               <Form.Control type="text" placeholder="Country" />
@@ -62,19 +62,19 @@ export default function InvoiceForm() {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={6} md={4}>
             <Form.Group>
               <Form.Label>City</Form.Label>
               <Form.Control type="text" placeholder="City" />
             </Form.Group>
           </Col>
-          <Col>
+          <Col xs={6} md={4}>
             <Form.Group>
               <Form.Label>Post Code</Form.Label>
               <Form.Control type="text" placeholder="Post Code" />
             </Form.Group>
           </Col>
-          <Col>
+          <Col md={4}>
             <Form.Group>
               <Form.Label>Country</Form.Label>
               <Form.Control type="text" placeholder="Country" />
@@ -82,7 +82,7 @@ export default function InvoiceForm() {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={12} md={6}>
             <Form.Group>
               <Form.Label>Invoice Date</Form.Label>
               <div className="calendar">
@@ -91,7 +91,7 @@ export default function InvoiceForm() {
               </div>
             </Form.Group>
           </Col>
-          <Col>
+          <Col xs={12} md={6}>
             <Form.Group>
               <Form.Label>Payment Terms</Form.Label>
               <Dropdown id="payment-terms" className="h-100">
@@ -133,12 +133,12 @@ export default function InvoiceForm() {
         </Row>
       </Form>
       <Row id="actionContainer" className="justify-content-between">
-        <Col md={2}>
+        <Col xs={2} md={2}>
           <button className="discard">Discard</button>
         </Col>
-        <Col md={8} className="d-flex justify-content-end">
+        <Col xs={9} md={8} className="d-flex justify-content-end">
           <button className="draft me-2">Save as Draft</button>
-          <button className="send">Save & Send</button>
+          <button className="send me-2">Save & Send</button>
         </Col>
       </Row>
     </>

@@ -37,9 +37,9 @@
     line-height: 15px;
     letter-spacing: -0.25px;
   }
-  .row {
-    margin-top: 24px;
-    margin-bottom: 24px;
+  .row > div {
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
   .form-label {
     color: var(--color-detail-text);
@@ -160,6 +160,30 @@
       width: 100%;
       background-color: #FFFFFF;
       padding: 31px 56px;
+      border-top-right-radius: 20px;
+      z-index: 2;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) and (orientation: portrait) {
+  #formContainer {
+    width: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    & > form {
+      padding: 0 24px;
+      padding-top: 136px;
+      .row > div {
+        padding-right: 0;
+      }
+      .row {
+        width: 100%;
+      }
+    }
+    #actionContainer {
+      padding: 21px 34px 21px 24px;
+      border-top-right-radius: 0;
     }
   }
 }

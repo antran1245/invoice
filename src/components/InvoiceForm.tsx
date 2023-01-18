@@ -5,9 +5,9 @@ import { Col, Dropdown, Form, Row } from "react-bootstrap";
 
 export default function InvoiceForm() {
   return (
-    <Form>
-      <p>Bill Form</p>
-      <div>
+    <>
+      <Form>
+        <p>Bill Form</p>
         <Row>
           <Col>
             <Form.Group>
@@ -131,7 +131,7 @@ export default function InvoiceForm() {
             <button className="w-100 add-button" >+Add New Item</button>
           </Col>
         </Row>
-      </div>
+      </Form>
       <Row id="actionContainer" className="justify-content-between">
         <Col md={2}>
           <button className="discard">Discard</button>
@@ -141,6 +141,6 @@ export default function InvoiceForm() {
           <button className="send">Save & Send</button>
         </Col>
       </Row>
-    </Form>
+    </>
   )
 }

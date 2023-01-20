@@ -1,5 +1,5 @@
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { Col, Dropdown, Form, Row } from "react-bootstrap";
@@ -124,11 +124,36 @@ export default function InvoiceForm() {
         </Row>
         <h2>Item List</h2>
         <Row className="heading">
-          <Col>Item Name</Col>
-          <Col>Qty.</Col>
-          <Col>Price</Col>
-          <Col>Total</Col>
+          <Col md={4}>Item Name</Col>
+          <Col md={2}>Qty.</Col>
+          <Col md={3}>Price</Col>
+          <Col md={3}>Total</Col>
         </Row>
+        {
+          invoice?.items.map((item, index) => {
+            return <Row key={index} className="invoiceItem">
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Control type="text" defaultValue={item.name} />
+                </Form.Group>
+              </Col>
+              <Col md={2}>
+                <Form.Group>
+                  <Form.Control type="text" defaultValue={item.quantity} />
+                </Form.Group>
+              </Col>
+              <Col md={3}>
+                <Form.Group>
+                  <Form.Control type="text" defaultValue={item.price} />
+                </Form.Group>
+              </Col>
+              <Col md={3} className="invoiceItemTotal">
+                {item.total}
+                <FontAwesomeIcon icon={faTrash} />
+              </Col>
+            </Row>
+          })
+        }
         <Row>
           <Col>
             <button className="w-100 add-button" >+Add New Item</button>

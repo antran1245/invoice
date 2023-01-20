@@ -118,6 +118,15 @@
       color: var(--color-detail-text);
     }
   }
+  .invoiceItem {
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+    .invoiceItemTotal {
+      justify-content: space-between;
+    }
+  }
   .add-button {
     padding: 17px 165px 16px 166px;
     background-color: var(--color-button-edit);
@@ -125,6 +134,8 @@
     border: none;
     border-radius: 24px;
   }
+
+  // Button Group
   .discard, .draft, .send {
     padding: 17px 24px;
     border: none;

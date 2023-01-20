@@ -6,13 +6,13 @@ import { Context } from "../context/InvoiceContext";
 import "../sass/invoicedetail.scss"
 
 export default function InvoiceDetail() {
-  const context = useContext(Context)
+  const { invoice, setInvoice, setOverlay } = useContext(Context)
 
   return (
-    context?.invoice ?
+    invoice ?
       <div id="detail">
         <Row className="back">
-          <p onClick={() => context.setInvoice(null)}>
+          <p onClick={() => setInvoice(null)}>
             <span>
               <FontAwesomeIcon icon={faAngleLeft} />
             </span>
@@ -23,13 +23,13 @@ export default function InvoiceDetail() {
           <Col className="statusContainer justify-content-between">
             <div className="d-flex justify-content-between justify-content-md-start w-100">
               <p>Status</p>
-              <div className={`status ${context.invoice.status}`}>
+              <div className={`status ${invoice.status}`}>
                 <span>&#x2022;</span>
-                <p>{context?.invoice.status}</p>
+                <p>{invoice.status}</p>
               </div>
             </div>
             <div className="buttonGroup d-none d-md-flex w-100 justify-content-end">
-              <button className="edit">Edit</button>
+              <button className="edit" onClick={() => setOverlay(true)}>Edit</button>
               <button className="delete">Delete</button>
               <button className="markAsPaid">Mark as Paid</button>
             </div>
@@ -38,14 +38,14 @@ export default function InvoiceDetail() {
         <Row className="invoice">
           <Row>
             <Col xs={12} md={6}>
-              <p className="invoiceId">#<span>{context.invoice.id}</span></p>
-              <p className="description mt-2">{context.invoice.description}</p>
+              <p className="invoiceId">#<span>{invoice.id}</span></p>
+              <p className="description mt-2">{invoice.description}</p>
             </Col>
             <Col className="senderAddress text-start text-md-end mt-4 mt-md-0" xs={12} md={6}>
-              <p>{context.invoice.senderAddress.street}</p>
-              <p>{context.invoice.senderAddress.city}</p>
-              <p>{context.invoice.senderAddress.postCode}</p>
-              <p>{context.invoice.senderAddress.country}</p>
+              <p>{invoice.senderAddress.street}</p>
+              <p>{invoice.senderAddress.city}</p>
+              <p>{invoice.senderAddress.postCode}</p>
+              <p>{invoice.senderAddress.country}</p>
             </Col>
           </Row>
           <Row className="clientAddress">
@@ -53,27 +53,27 @@ export default function InvoiceDetail() {
               <div>
                 <p className="subtitle">Invoice Date</p>
                 <p className="highlight mt-3">
-                  {new Date(context.invoice.createdAt).getDate()} {new Date(context.invoice.createdAt).toLocaleDateString('en-us', { year: "numeric", month: "short" })}
+                  {new Date(invoice.createdAt).getDate()} {new Date(invoice.createdAt).toLocaleDateString('en-us', { year: "numeric", month: "short" })}
                 </p>
               </div>
               <div className="dueDate">
                 <p className="subtitle">Payment Due</p>
                 <p className="highlight mt-3">
-                  {new Date(context.invoice.paymentDue).getDate()} {new Date(context.invoice.paymentDue).toLocaleDateString('en-us', { year: "numeric", month: "short" })}
+                  {new Date(invoice.paymentDue).getDate()} {new Date(invoice.paymentDue).toLocaleDateString('en-us', { year: "numeric", month: "short" })}
                 </p>
               </div>
             </Col>
             <Col xs={6} md={4}>
               <p className="subtitle">Bill To</p>
-              <p className="highlight mt-3">{context.invoice.clientName}</p>
-              <p className="subtitle mt-2">{context.invoice.clientAddress.street}</p>
-              <p className="subtitle mt-2">{context.invoice.clientAddress.city}</p>
-              <p className="subtitle mt-2">{context.invoice.clientAddress.postCode}</p>
-              <p className="subtitle mt-2">{context.invoice.clientAddress.country}</p>
+              <p className="highlight mt-3">{invoice.clientName}</p>
+              <p className="subtitle mt-2">{invoice.clientAddress.street}</p>
+              <p className="subtitle mt-2">{invoice.clientAddress.city}</p>
+              <p className="subtitle mt-2">{invoice.clientAddress.postCode}</p>
+              <p className="subtitle mt-2">{invoice.clientAddress.country}</p>
             </Col>
             <Col className="mt-4 mt-md-0">
               <p className="subtitle">Sent to</p>
-              <p className="highlight mt-3">{context.invoice.clientEmail}</p>
+              <p className="highlight mt-3">{invoice.clientEmail}</p>
             </Col>
           </Row>
           <Row className="itemListing">
@@ -86,7 +86,7 @@ export default function InvoiceDetail() {
               <Col md={3} className="total">Total</Col>
             </div>
             {
-              context.invoice.items.map((item, index) => {
+              invoice.items.map((item, index) => {
                 return <div key={index} className={`item ${index !== 0 ? 'mt-4' : 'mt-0 mt-md-4'} align-items-center`}>
                   <Col xs={9} md={9} className="d-flex flex-wrap align-items-center">
                     <Col xs={12} sm={12} md={7}>{item.name}</Col>
@@ -100,7 +100,7 @@ export default function InvoiceDetail() {
           </Row>
           <Row className="amount">
             <Col>Amount Due</Col>
-            <Col className="total"><FontAwesomeIcon icon={faEuroSign} /> {context.invoice.total}</Col>
+            <Col className="total"><FontAwesomeIcon icon={faEuroSign} /> {invoice.total}</Col>
           </Row>
         </Row>
       </div> : null

@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Col, Dropdown, Row } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faCirclePlus, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { InvoiceInterface } from "../interfaces/InvoiceInterface";
+import { Context } from "../context/InvoiceContext";
 import Invoice from "./Invoice";
 import empty from '../assets/illustration-empty.svg'
 import file from '../data.json'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faCirclePlus, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import "../sass/invoiceslisting.scss"
-import { InvoiceInterface } from "../interfaces/InvoiceInterface";
 
 export default function InvoicesListing() {
+  const { setOverlay } = useContext(Context)
   const [angle, setAngle] = useState<boolean>(true)
   const [data, setData] = useState<InvoiceInterface[] | []>([])
   const [filter, setFilter] = useState<{ 'draft': boolean, 'pending': boolean, 'paid': boolean }>({ 'draft': false, 'pending': false, 'paid': false })
@@ -55,7 +57,7 @@ export default function InvoicesListing() {
                 <div><label><input type={"checkbox"} value="paid" onChange={(e) => filterStatus(e)} checked={filter.paid} /> Paid</label></div>
               </Dropdown.Menu>
             </Dropdown>
-            <button className="new"><FontAwesomeIcon icon={faCirclePlus} /> New<span className="d-none d-md-block">&nbsp;Invoice</span></button>
+            <button className="new" onClick={() => setOverlay(true)}><FontAwesomeIcon icon={faCirclePlus} /> New<span className="d-none d-md-block">&nbsp;Invoice</span></button>
           </div>
         </header>
       </Row>

@@ -10,6 +10,10 @@ export default function InvoiceForm() {
   return (
     <>
       <Form>
+        {
+          invoice ?
+            <h2>Edit <span>#</span>{invoice.id}</h2> : <h2>New Invoice</h2>
+        }
         <p>Bill Form</p>
         <Row>
           <Col>
@@ -122,7 +126,7 @@ export default function InvoiceForm() {
             </Form.Group>
           </Col>
         </Row>
-        <h2>Item List</h2>
+        <h3>Item List</h3>
         <Row className="heading">
           <Col md={4}>Item Name</Col>
           <Col md={2}>Qty.</Col>

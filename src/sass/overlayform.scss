@@ -19,6 +19,16 @@
   border-bottom-right-radius: 20px;
   overflow-y: scroll;
   background-color: var(--color-overlay-form);
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    color: var(--color-common-text);
+    span {
+      color: #888EB0;
+    }
+  }
   & > form {
     padding: 56px 56px 32px 159px;
   }
@@ -105,7 +115,7 @@
   }
 
   // Item List
-  h2 {
+  h3 {
     color: #777F98;
     font-weight: 700;
     font-size: 18px;

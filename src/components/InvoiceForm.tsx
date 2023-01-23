@@ -1,4 +1,3 @@
-import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faAngleDown, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
@@ -166,11 +165,19 @@ export default function InvoiceForm() {
       </Form>
       <Row id="actionContainer" className="justify-content-between">
         <Col xs={2} md={2}>
-          <button className="discard" onClick={() => setOverlay(false)}>Discard</button>
+          <button className={`discard ${invoice ? 'd-none' : ''}`} onClick={() => setOverlay(false)}>Discard</button>
         </Col>
         <Col xs={9} md={8} className="d-flex justify-content-end">
-          <button className="draft me-2">Save as Draft</button>
-          <button className="send me-2">Save & Send</button>
+          {invoice ?
+            <>
+              <button className="draft me-2" onClick={() => setOverlay(false)}>Cancel</button>
+              <button className="send me-2">Save Changes</button>
+            </> :
+            <>
+              <button className="draft me-2">Save as Draft</button>
+              <button className="send me-2">Save & Send</button>
+            </>
+          }
         </Col>
       </Row>
     </>

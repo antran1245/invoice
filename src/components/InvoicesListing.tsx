@@ -1,23 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Col, Dropdown, Row } from "react-bootstrap";
-import { InvoiceInterface } from "../interfaces/InvoiceInterface";
 import { Context } from "../context/InvoiceContext";
 import Invoice from "./Invoice";
 import empty from '../assets/illustration-empty.svg'
-import file from '../data.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faCirclePlus, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import "../sass/invoiceslisting.scss"
 
 export default function InvoicesListing() {
-  const { setOverlay } = useContext(Context)
+  const { setOverlay, data, setData, original } = useContext(Context)
   const [angle, setAngle] = useState<boolean>(true)
-  const [data, setData] = useState<InvoiceInterface[] | []>([])
   const [filter, setFilter] = useState<{ 'draft': boolean, 'pending': boolean, 'paid': boolean }>({ 'draft': false, 'pending': false, 'paid': false })
-
-  useEffect(() => {
-    setData(file)
-  }, [])
 
   /**
    * Reset all the filter to default (false).
@@ -27,12 +20,12 @@ export default function InvoicesListing() {
    */
   const filterStatus = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      let curr = file.filter(item => item.status === e.target.value)
+      let curr = original.filter(item => item.status === e.target.value)
       let defaultFilter = { 'draft': false, 'pending': false, 'paid': false }
       setData(curr)
       setFilter({ ...defaultFilter, [e.target.value]: true })
     } else {
-      setData(file)
+      setData(original)
       setFilter({ 'draft': false, 'pending': false, 'paid': false })
     }
   }
